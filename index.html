@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr Awal Oboafo Herbal Clinic | Natural Healing, Better Living</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        emerald: {
+                            850: '#064e3b',
+                            900: '#022c22',
+                            950: '#011c15',
+                        },
+                        gold: {
+                            300: '#fde047',
+                            400: '#facc15',
+                            500: '#eab308',
+                            600: '#ca8a04',
+                            700: '#a16207',
+                        }
+                    },
+                    fontFamily: {
+                        heading: ['Cinzel', 'serif'],
+                        body: ['Plus Jakarta Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .font-heading { font-family: 'Cinzel', serif; }
+        .text-gold-gradient {
+            background: linear-gradient(135deg, #d4af37 0%, #fffdd0 40%, #aa771c 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-100 antialiased selection:bg-gold-500 selection:text-slate-900">
+
+    <!-- Top Contact Bar -->
+    <header class="bg-emerald-950 text-slate-300 text-sm border-b border-gold-500/20 py-2.5 sticky top-0 z-50 backdrop-blur-md bg-opacity-95">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center gap-2">
+            <div class="flex items-center gap-6 text-xs sm:text-sm">
+                <a href="tel:0599057055" class="flex items-center gap-2 hover:text-gold-400 transition-colors">
+                    <i class="fa-solid fa-phone text-gold-500"></i>
+                    <span class="font-semibold">0599057055</span>
+                </a>
+                <a href="mailto:drawaloboafoclinic@gmail.com" class="flex items-center gap-2 hover:text-gold-400 transition-colors">
+                    <i class="fa-solid fa-envelope text-gold-500"></i>
+                    <span class="hidden md:inline">drawaloboafoclinic@gmail.com</span>
+                    <span class="md:hidden">Email Us</span>
+                </a>
+                <span class="hidden lg:flex items-center gap-2 text-slate-400">
+                    <i class="fa-solid fa-location-dot text-gold-500"></i>
+                    Amansaman Onyassana - Accra Price Junction
+                </span>
+            </div>
+            <div class="flex items-center gap-4">
+                <a href="https://wa.me/233599057055?text=Hello%20Dr%20Awal%20Oboafo%20Herbal%20Clinic,%20I%20would%20like%20to%20inquire%20about%20a%20consultation." 
+                   target="_blank" 
+                   rel="noopener noreferrer"
+                   class="bg-emerald-600 hover:bg-emerald-500 text-white text-xs px-3 py-1.5 rounded-full font-medium flex items-center gap-1.5 transition-all shadow-sm">
+                    <i class="fa-brands fa-whatsapp text-sm"></i> WhatsApp Us
+                </a>
+                <button onclick="openBookingModal()" class="bg-gradient-to-r from-gold-600 to-gold-500 hover:from-gold-500 hover:to-gold-400 text-slate-950 text-xs px-3 py-1.5 rounded-full font-bold transition-all shadow-md">
+                    Book Appointment
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation Bar -->
+    <nav class="bg-emerald-900/90 border-b border-emerald-800/50 py-4 backdrop-blur-md sticky top-[41px] z-40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-12 h-12 rounded-full bg-gradient-to-br from-gold-400 via-gold-600 to-emerald-900 p-0.5 flex items-center justify-center shadow-lg">
+                    <div class="w-full h-full bg-emerald-950 rounded-full flex items-center justify-center text-gold-400 group-hover:scale-105 transition-transform">
+                        <i class="fa-solid fa-mortar-pestle text-xl"></i>
+                    </div>
+                </div>
+                <div>
+                    <h1 class="font-heading text-lg sm:text-xl font-bold tracking-wide text-gold-400 leading-tight">
+                        Dr Awal Oboafo
+                    </h1>
+                    <p class="text-xs text-slate-300 font-semibold tracking-wider uppercase">Herbal Clinic</p>
+                </div>
+            </a>
+
+            <div class="hidden md:flex items-center space-x-8 text-sm font-medium">
+                <a href="#about" class="text-slate-200 hover:text-gold-400 transition-colors">About Us</a>
+                <a href="#specializations" class="text-slate-200 hover:text-gold-400 transition-colors">Specializations</a>
+                <a href="#ai-assistant" onclick="openAiChatModal()" class="text-gold-400 hover:text-gold-300 font-semibold flex items-center gap-1.5">
+                    <i class="fa-solid fa-robot"></i> AI Health Assistant
+                </a>
+                <a href="#referral" class="text-slate-200 hover:text-gold-400 transition-colors">Referral & Offers</a>
+                <a href="#contact" class="text-slate-200 hover:text-gold-400 transition-colors">Contact</a>
+            </div>
+
+            <button id="mobileMenuBtn" class="md:hidden text-slate-200 hover:text-gold-400 focus:outline-none p-2">
+                <i class="fa-solid fa-bars text-2xl"></i>
+            </button>
+        </div>
+
+        <div id="mobileMenu" class="hidden md:hidden bg-emerald-950 border-b border-emerald-800 px-4 pt-3 pb-6 space-y-3">
+            <a href="#about" class="block text-slate-200 hover:text-gold-400 py-2 border-b border-emerald-900">About Us</a>
+            <a href="#specializations" class="block text-slate-200 hover:text-gold-400 py-2 border-b border-emerald-900">Specializations</a>
+            <a href="#ai-assistant" onclick="openAiChatModal(); toggleMobileMenu();" class="block text-gold-400 font-semibold py-2 border-b border-emerald-900 flex items-center gap-2">
+                <i class="fa-solid fa-robot"></i> AI Health Assistant
+            </a>
+            <a href="#referral" class="block text-slate-200 hover:text-gold-400 py-2 border-b border-emerald-900">Referral Program</a>
+            <a href="#contact" class="block text-slate-200 hover:text-gold-400 py-2">Contact & Location</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-[85vh] flex items-center justify-center overflow-hidden py-16 px-4 sm:px-6 lg:px-8">
+        <div class="absolute inset-0 bg-gradient-to-br from-emerald-950 via-slate-950 to-emerald-900 -z-10"></div>
+        <div class="absolute -top-32 -left-32 w-96 h-96 bg-emerald-600/20 rounded-full blur-3xl -z-10"></div>
+        <div class="absolute -bottom-32 -right-32 w-96 h-96 bg-gold-600/10 rounded-full blur-3xl -z-10"></div>
+        
+        <div class="max-w-5xl mx-auto text-center space-y-8">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-900/60 border border-gold-500/30 text-gold-300 text-xs sm:text-sm font-semibold uppercase tracking-widest animate-pulse">
+                <i class="fa-solid fa-leaf text-gold-400"></i> Rooted in Nature, Committed to You
+            </div>
+            
+            <h1 class="font-heading text-3xl sm:text-5xl lg:text-6xl font-extrabold text-slate-100 leading-tight">
+                Natural Healing, <span class="text-gold-gradient">Better Living</span>
+            </h1>
+            
+            <p class="max-w-3xl mx-auto text-slate-300 text-base sm:text-lg lg:text-xl font-light leading-relaxed">
+                Welcome to <strong class="text-gold-400 font-semibold">Dr Awal Oboafo Herbal Clinic</strong>. We provide holistic, proven organic and herbal medical solutions tailored for severe chronic ailments, wellness restored, and long-term vitality.
+            </p>
+
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+                <button onclick="openBookingModal()" class="w-full sm:w-auto bg-gradient-to-r from-gold-500 via-gold-600 to-gold-700 hover:from-gold-400 hover:to-gold-600 text-slate-950 font-bold px-8 py-4 rounded-xl shadow-lg transition-all flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-calendar-check text-lg"></i> Book Consultation
+                </button>
+                <button onclick="openAiChatModal()" class="w-full sm:w-auto bg-emerald-800/90 hover:bg-emerald-700 text-gold-300 border border-gold-500/50 font-semibold px-8 py-4 rounded-xl backdrop-blur-sm transition-all flex items-center justify-center gap-2 shadow-lg">
+                    <i class="fa-solid fa-wand-magic-sparkles text-gold-400"></i> Try AI Symptom Analyzer
+                </button>
+            </div>
+
+            <!-- Social Share Bar -->
+            <div class="pt-6 flex flex-wrap items-center justify-center gap-3">
+                <span class="text-xs text-slate-400 uppercase font-semibold tracking-wider">Share Clinic Webpage:</span>
+                <button onclick="shareOnSocial('whatsapp')" class="bg-emerald-900/80 hover:bg-emerald-800 text-emerald-300 text-xs px-3 py-1.5 rounded-lg border border-emerald-700/50 flex items-center gap-1.5 transition-all">
+                    <i class="fa-brands fa-whatsapp text-sm"></i> WhatsApp
+                </button>
+                <button onclick="shareOnSocial('facebook')" class="bg-slate-900/80 hover:bg-slate-800 text-blue-400 text-xs px-3 py-1.5 rounded-lg border border-slate-700/50 flex items-center gap-1.5 transition-all">
+                    <i class="fa-brands fa-facebook-f text-xs"></i> Facebook
+                </button>
+                <button onclick="shareOnSocial('twitter')" class="bg-slate-900/80 hover:bg-slate-800 text-slate-200 text-xs px-3 py-1.5 rounded-lg border border-slate-700/50 flex items-center gap-1.5 transition-all">
+                    <i class="fa-brands fa-x-twitter text-xs"></i> X / Twitter
+                </button>
+                <button onclick="shareOnSocial('telegram')" class="bg-slate-900/80 hover:bg-slate-800 text-sky-400 text-xs px-3 py-1.5 rounded-lg border border-slate-700/50 flex items-center gap-1.5 transition-all">
+                    <i class="fa-brands fa-telegram text-xs"></i> Telegram
+                </button>
+                <button onclick="copyClinicLink()" class="bg-slate-900/80 hover:bg-slate-800 text-gold-400 text-xs px-3 py-1.5 rounded-lg border border-slate-700/50 flex items-center gap-1.5 transition-all">
+                    <i class="fa-solid fa-link text-xs"></i> Copy Link
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-slate-950 border-t border-slate-900 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div class="space-y-6">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-900/60 text-gold-400 text-xs font-semibold uppercase tracking-wider border border-gold-500/20">
+                    <i class="fa-solid fa-award"></i> Trusted Traditional & Modern Expertise
+                </div>
+                <h2 class="font-heading text-3xl sm:text-4xl font-bold text-slate-100 leading-tight">
+                    Advanced Herbal Medicine Backed by Rigorous Research
+                </h2>
+                <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+                    At <strong class="text-gold-400">Dr Awal Oboafo Herbal Clinic</strong>, we combine generational botanical wisdom with modern diagnostic standards. Led by expert practitioners, our clinic specializes in reversing chronic conditions, detoxifying vital organs, and restoring natural vitality.
+                </p>
+                <div class="grid grid-cols-2 gap-4 pt-2">
+                    <div class="p-4 rounded-2xl bg-emerald-950/60 border border-emerald-800/60">
+                        <h4 class="font-heading text-2xl font-bold text-gold-400">36+</h4>
+                        <p class="text-xs text-slate-300 mt-1">Specialized Treatment Areas</p>
+                    </div>
+                    <div class="p-4 rounded-2xl bg-emerald-950/60 border border-emerald-800/60">
+                        <h4 class="font-heading text-2xl font-bold text-gold-400">100%</h4>
+                        <p class="text-xs text-slate-300 mt-1">Natural Herbal Solutions</p>
+                    </div>
+                </div>
+            </div>
+            <div class="relative rounded-3xl overflow-hidden border-2 border-gold-500/30 shadow-2xl bg-emerald-950 p-8 text-center space-y-6">
+                <div class="w-20 h-20 rounded-full bg-gold-500/20 mx-auto flex items-center justify-center text-gold-400 text-3xl">
+                    <i class="fa-solid fa-stethoscope"></i>
+                </div>
+                <h3 class="font-heading text-2xl font-bold text-slate-100">Ready to Begin Your Healing Journey?</h3>
+                <p class="text-xs sm:text-sm text-slate-300">
+                    Visit our clinic at <strong class="text-gold-400">Amansaman Onyassana - Accra Price Junction</strong> or reach out immediately via phone or WhatsApp.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center gap-3 pt-2">
+                    <a href="tel:0599057055" class="bg-gold-500 hover:bg-gold-400 text-slate-950 font-bold px-6 py-3 rounded-xl text-xs flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-phone"></i> Call 0599057055
+                    </a>
+                    <a href="https://wa.me/233599057055" target="_blank" class="bg-emerald-600 hover:bg-emerald-500 text-white font-bold px-6 py-3 rounded-xl text-xs flex items-center justify-center gap-2">
+                        <i class="fa-brands fa-whatsapp"></i> WhatsApp Chat
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Specializations & Ailment Directory Section -->
+    <section id="specializations" class="py-20 bg-emerald-950/40 border-t border-slate-900 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto space-y-10">
+            <div class="text-center space-y-3">
+                <span class="text-gold-400 text-xs font-semibold uppercase tracking-widest">Complete Directory</span>
+                <h2 class="font-heading text-3xl sm:text-4xl font-bold text-slate-100">
+                    We Specialize in Treating <span class="text-gold-gradient">36 Conditions</span>
+                </h2>
+                <p class="max-w-2xl mx-auto text-xs sm:text-sm text-slate-300">
+                    Search your condition below or filter by category to discover our specialized herbal treatments.
+                </p>
+            </div>
+
+            <!-- Search and Filter Bar -->
+            <div class="max-w-3xl mx-auto space-y-4">
+                <div class="relative">
+                    <i class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-slate-400"></i>
+                    <input type="text" id="ailmentSearch" placeholder="Search condition (e.g. Hypertension, Diabetes, Asthma, Ulcer)..." 
+                           class="w-full bg-slate-900 border border-emerald-800 text-slate-100 text-sm sm:text-base rounded-2xl pl-12 pr-12 py-4 focus:outline-none focus:border-gold-400 shadow-lg">
+                    <button id="clearSearch" class="hidden absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-100">
+                        <i class="fa-solid fa-xmark text-lg"></i>
+                    </button>
+                </div>
+
+                <!-- Category Tabs -->
+                <div class="flex flex-wrap items-center justify-center gap-2 pt-2">
+                    <button data-category="all" class="category-tab px-4 py-2 rounded-xl text-xs font-semibold bg-gold-500 text-slate-950 transition-all">All 36 Conditions</button>
+                    <button data-category="cardio" class="category-tab px-4 py-2 rounded-xl text-xs font-semibold bg-emerald-950 text-slate-300 border border-emerald-800 hover:border-gold-400 transition-all">Cardiovascular</button>
+                    <button data-category="metabolic" class="category-tab px-4 py-2 rounded-xl text-xs font-semibold bg-emerald-950 text-slate-300 border border-emerald-800 hover:border-gold-400 transition-all">Metabolic</button>
+                    <button data-category="respiratory" class="category-tab px-4 py-2 rounded-xl text-xs font-semibold bg-emerald-950 text-slate-300 border border-emerald-800 hover:border-gold-400 transition-all">Respiratory</button>
+                    <button data-category="digestive" class="category-tab px-4 py-2 rounded-xl text-xs font-semibold bg-emerald-950 text-slate-300 border border-emerald-800 hover:border-gold-400 transition-all">Digestive</button>
+                    <button data-category="neurological" class="category-tab px-4 py-2 rounded-xl text-xs font-semibold bg-emerald-950 text-slate-300 border border-emerald-800 hover:border-gold-400 transition-all">Neurological & Pain</button>
+                    <button data-category="infectious" class="category-tab px-4 py-2 rounded-xl text-xs font-semibold bg-emerald-950 text-slate-300 border border-emerald-800 hover:border-gold-400 transition-all">Infectious & Other</button>
+                </div>
+            </div>
+
+            <div id="searchCount" class="text-center text-xs text-gold-400 font-semibold hidden"></div>
+
+            <!-- Ailments Grid -->
+            <div id="ailmentsGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6"></div>
+
+            <div id="noResults" class="hidden text-center py-12 text-slate-400 space-y-3">
+                <i class="fa-solid fa-triangle-exclamation text-3xl text-gold-500"></i>
+                <p class="text-sm font-semibold">No matching conditions found in our directory.</p>
+                <p class="text-xs">You can still book a custom consultation or contact Dr. Awal directly.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Automated Email Marketing & Client Referral Program -->
+    <section id="referral" class="py-20 bg-slate-950 border-t border-slate-900 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-stretch">
+                
+                <!-- Lead Capture -->
+                <div class="bg-slate-900/90 border border-gold-500/30 rounded-3xl p-6 sm:p-8 flex flex-col justify-between space-y-6 shadow-2xl relative overflow-hidden">
+                    <div class="space-y-4">
+                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-900/80 text-gold-400 text-xs font-semibold uppercase tracking-wider border border-gold-500/30">
+                            <i class="fa-solid fa-gift"></i> Automated Health Voucher
+                        </div>
+                        <h3 class="font-heading text-2xl sm:text-3xl font-bold text-slate-100 leading-snug">
+                            Get Your Free Herbal Health Guide & 10% Care Voucher
+                        </h3>
+                        <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                            Subscribe to our automated patient care newsletter. You will immediately receive a digital herbal diet guide, wellness recommendations, and a consultation discount code straight to your inbox.
+                        </p>
+                    </div>
+
+                    <form onsubmit="handleLeadCapture(event)" class="space-y-4">
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 uppercase mb-1">Full Name</label>
+                            <input type="text" id="leadName" required placeholder="Enter your full name" 
+                                   class="w-full bg-slate-950 border border-emerald-800 text-slate-100 text-sm rounded-xl p-3 focus:outline-none focus:border-gold-400">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 uppercase mb-1">Email Address</label>
+                            <input type="email" id="leadEmail" required placeholder="name@example.com" 
+                                   class="w-full bg-slate-950 border border-emerald-800 text-slate-100 text-sm rounded-xl p-3 focus:outline-none focus:border-gold-400">
+                        </div>
+                        <button type="submit" class="w-full bg-gradient-to-r from-gold-500 to-gold-600 hover:from-gold-400 hover:to-gold-500 text-slate-950 font-bold py-3.5 rounded-xl shadow-lg transition-all flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-paper-plane"></i> Send Free Guide & Voucher
+                        </button>
+                    </form>
+
+                    <div id="leadSuccess" class="hidden p-4 rounded-xl bg-emerald-950 border border-emerald-600 text-emerald-300 text-xs space-y-1">
+                        <div class="font-bold flex items-center gap-2">
+                            <i class="fa-solid fa-circle-check text-gold-400"></i> Email Sent Automatically!
+                        </div>
+                        <p>Check your inbox for your Herbal Health Plan & Voucher code: <strong class="text-gold-300">AWAL-HERBAL-10</strong></p>
+                    </div>
+                </div>
+
+                <!-- Referral Program Form -->
+                <div class="bg-emerald-950/90 border border-emerald-700/50 rounded-3xl p-6 sm:p-8 flex flex-col justify-between space-y-6 shadow-2xl relative overflow-hidden">
+                    <div class="space-y-4">
+                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold-500/20 text-gold-300 text-xs font-semibold uppercase tracking-wider border border-gold-500/30">
+                            <i class="fa-solid fa-share-nodes"></i> Client Referral Engine
+                        </div>
+                        <h3 class="font-heading text-2xl sm:text-3xl font-bold text-slate-100 leading-snug">
+                            Refer a Loved One to Dr Awal Oboafo Clinic
+                        </h3>
+                        <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                            Know someone suffering from chronic illness or seeking holistic healing? Enter their details below to automatically email them a personalized invitation and treatment overview.
+                        </p>
+                    </div>
+
+                    <form onsubmit="handleReferralSubmit(event)" class="space-y-4">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-300 uppercase mb-1">Your Name</label>
+                                <input type="text" id="refSender" required placeholder="Your Name" 
+                                       class="w-full bg-slate-900 border border-emerald-800 text-slate-100 text-sm rounded-xl p-3 focus:outline-none focus:border-gold-400">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-300 uppercase mb-1">Friend's Name</label>
+                                <input type="text" id="refFriend" required placeholder="Friend's Name" 
+                                       class="w-full bg-slate-900 border border-emerald-800 text-slate-100 text-sm rounded-xl p-3 focus:outline-none focus:border-gold-400">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 uppercase mb-1">Friend's Email or WhatsApp Phone</label>
+                            <input type="text" id="refContact" required placeholder="Email or Phone Number" 
+                                   class="w-full bg-slate-900 border border-emerald-800 text-slate-100 text-sm rounded-xl p-3 focus:outline-none focus:border-gold-400">
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 uppercase mb-1">Target Health Interest (Optional)</label>
+                            <select id="refInterest" class="w-full bg-slate-900 border border-emerald-800 text-slate-100 text-sm rounded-xl p-3 focus:outline-none">
+                                <option value="General Natural Care">General Natural Care</option>
+                                <option value="Hypertension & Heart Health">Hypertension & Heart Health</option>
+                                <option value="Diabetes Management">Diabetes Management</option>
+                                <option value="Digestive & Ulcer Relief">Digestive & Ulcer Relief</option>
+                                <option value="Asthma & Respiratory">Asthma & Respiratory</option>
+                                <option value="Spiritual Healing & Holistic Wellness">Spiritual Healing & Holistic Wellness</option>
+                            </select>
+                        </div>
+
+                        <button type="submit" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-3.5 rounded-xl shadow-lg transition-all flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-paper-plane"></i> Dispatch Referral Invitation
+                        </button>
+                    </form>
+
+                    <div id="referralSuccess" class="hidden p-4 rounded-xl bg-slate-900 border border-gold-500/40 text-gold-300 text-xs space-y-1">
+                        <div class="font-bold flex items-center gap-2">
+                            <i class="fa-solid fa-circle-check"></i> Referral Invite Dispatched!
+                        </div>
+                        <p id="referralSuccessText">An automated clinic invitation has been sent.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Location Footer Section -->
+    <footer id="contact" class="bg-emerald-950 border-t border-gold-500/20 pt-16 pb-12 px-4 sm:px-6 lg:px-8 text-slate-300">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 pb-12 border-b border-emerald-900">
+            <div class="space-y-4">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-full bg-gradient-to-br from-gold-400 to-emerald-900 flex items-center justify-center text-gold-400">
+                        <i class="fa-solid fa-mortar-pestle"></i>
+                    </div>
+                    <span class="font-heading text-lg font-bold text-gold-400">Dr Awal Oboafo Clinic</span>
+                </div>
+                <p class="text-xs sm:text-sm text-slate-400">
+                    Natural Healing, Better Living. Rooted in Nature, Committed to You. Specializing in chronic disease reversal and holistic healthcare.
+                </p>
+                <div class="flex items-center gap-3 pt-2">
+                    <a href="https://facebook.com" target="_blank" class="w-8 h-8 rounded-full bg-emerald-900 flex items-center justify-center text-gold-400 hover:bg-gold-500 hover:text-slate-950 transition-colors text-xs" title="Facebook">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+                    <a href="https://instagram.com" target="_blank" class="w-8 h-8 rounded-full bg-emerald-900 flex items-center justify-center text-gold-400 hover:bg-gold-500 hover:text-slate-950 transition-colors text-xs" title="Instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="https://wa.me/233599057055" target="_blank" class="w-8 h-8 rounded-full bg-emerald-900 flex items-center justify-center text-gold-400 hover:bg-gold-500 hover:text-slate-950 transition-colors text-xs" title="WhatsApp">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="space-y-4">
+                <h4 class="font-heading font-bold text-slate-100 text-base">Quick Links</h4>
+                <ul class="space-y-2 text-xs sm:text-sm">
+                    <li><a href="#about" class="hover:text-gold-400 transition-colors">About the Clinic</a></li>
+                    <li><a href="#specializations" class="hover:text-gold-400 transition-colors">36 Specializations Directory</a></li>
+                    <li><a href="#ai-assistant" onclick="openAiChatModal()" class="hover:text-gold-400 transition-colors">AI Health Assistant</a></li>
+                    <li><a href="#referral" class="hover:text-gold-400 transition-colors">Referral & Health Voucher</a></li>
+                    <li><button onclick="openBookingModal()" class="hover:text-gold-400 transition-colors text-left">Book Consultation</button></li>
+                </ul>
+            </div>
+
+            <div class="space-y-4">
+                <h4 class="font-heading font-bold text-slate-100 text-base">Contact & Location</h4>
+                <div class="space-y-3 text-xs sm:text-sm">
+                    <p class="flex items-center gap-2">
+                        <i class="fa-solid fa-phone text-gold-500"></i>
+                        <a href="tel:0599057055" class="font-bold hover:text-gold-400">0599057055</a>
+                    </p>
+                    <p class="flex items-center gap-2">
+                        <i class="fa-solid fa-envelope text-gold-500"></i>
+                        <a href="mailto:drawaloboafoclinic@gmail.com" class="hover:text-gold-400">drawaloboafoclinic@gmail.com</a>
+                    </p>
+                    <p class="flex items-start gap-2">
+                        <i class="fa-solid fa-location-dot text-gold-500 mt-1"></i>
+                        <span>Amansaman Onyassana - Accra Price Junction, Ghana</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto pt-8 flex flex-col sm:flex-row justify-between items-center text-xs text-slate-400 gap-4">
+            <p>&copy; <span id="year">2026</span> Dr Awal Oboafo Herbal Clinic. All rights reserved.</p>
+            <p class="text-gold-400 font-medium">Your Health... Our Priority</p>
+        </div>
+    </footer>
+
+    <!-- Floating Action Buttons (FAB) -->
+    <div class="fixed bottom-6 right-6 z-50 flex flex-col gap-3">
+        <button onclick="openAiChatModal()" 
+                title="Launch AI Symptom Assistant"
+                class="w-13 h-13 sm:w-14 sm:h-14 bg-gradient-to-tr from-gold-600 to-gold-400 text-slate-950 rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-transform relative group">
+            <i class="fa-solid fa-robot text-2xl"></i>
+            <span class="absolute -top-1 -right-1 w-4 h-4 bg-emerald-500 rounded-full border-2 border-slate-950 animate-ping"></span>
+            <span class="absolute right-16 bg-slate-900 text-gold-300 text-xs px-2 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap border border-gold-500/30">AI Symptom Assistant</span>
+        </button>
+
+        <a href="https://wa.me/233599057055" target="_blank" rel="noopener noreferrer"
+           title="Chat on WhatsApp"
+           class="w-13 h-13 sm:w-14 sm:h-14 bg-emerald-500 hover:bg-emerald-400 text-white rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-transform">
+            <i class="fa-brands fa-whatsapp text-2xl sm:text-3xl"></i>
+        </a>
+
+        <a href="tel:0599057055" 
+           title="Call Now"
+           class="w-13 h-13 sm:w-14 sm:h-14 bg-gold-500 hover:bg-gold-400 text-slate-950 rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-transform">
+            <i class="fa-solid fa-phone text-xl sm:text-2xl"></i>
+        </a>
+    </div>
+
+    <!-- AI ASSISTANT & SYMPTOM ANALYZER MODAL -->
+    <div id="aiChatModal" class="fixed inset-0 bg-slate-950/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-3 sm:p-4">
+        <div class="bg-slate-900 border border-gold-500/40 rounded-3xl max-w-2xl w-full h-[85vh] flex flex-col shadow-2xl relative overflow-hidden">
+            
+            <div class="bg-emerald-950 border-b border-emerald-800 p-4 flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-gold-500 to-gold-300 text-slate-950 flex items-center justify-center font-bold text-lg shadow-md">
+                        <i class="fa-solid fa-robot"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-heading font-bold text-slate-100 text-base flex items-center gap-2">
+                            Dr. Awal AI Herbal Assistant 
+                            <span class="bg-emerald-800 text-emerald-300 text-[10px] px-2 py-0.5 rounded-full uppercase">Online</span>
+                        </h3>
+                        <p class="text-xs text-slate-400">Automated Symptom Analyzer & Clinic Concierge</p>
+                    </div>
+                </div>
+                <button onclick="closeAiChatModal()" class="text-slate-400 hover:text-slate-100 p-2">
+                    <i class="fa-solid fa-xmark text-xl"></i>
+                </button>
+            </div>
+
+            <div class="bg-slate-950/60 p-2 border-b border-slate-800 flex gap-2 overflow-x-auto text-xs">
+                <button onclick="sendQuickPrompt('Check my symptoms')" class="px-3 py-1.5 rounded-full bg-emerald-900/60 hover:bg-emerald-800 text-gold-300 whitespace-nowrap border border-gold-500/20">
+                    <i class="fa-solid fa-stethoscope"></i> Symptom Check
+                </button>
+                <button onclick="sendQuickPrompt('What are your clinic hours and location?')" class="px-3 py-1.5 rounded-full bg-emerald-900/60 hover:bg-emerald-800 text-gold-300 whitespace-nowrap border border-gold-500/20">
+                    <i class="fa-solid fa-clock"></i> Hours & Location
+                </button>
+                <button onclick="sendQuickPrompt('Do you treat Diabetes and Hypertension?')" class="px-3 py-1.5 rounded-full bg-emerald-900/60 hover:bg-emerald-800 text-gold-300 whitespace-nowrap border border-gold-500/20">
+                    <i class="fa-solid fa-capsules"></i> Diabetes & Pressure
+                </button>
+                <button onclick="sendQuickPrompt('How do I book a consultation?')" class="px-3 py-1.5 rounded-full bg-emerald-900/60 hover:bg-emerald-800 text-gold-300 whitespace-nowrap border border-gold-500/20">
+                    <i class="fa-solid fa-calendar-plus"></i> Book Consultation
+                </button>
+            </div>
+
+            <div id="aiChatHistory" class="flex-1 p-4 overflow-y-auto space-y-4 text-xs sm:text-sm">
+                <div class="flex items-start gap-3">
+                    <div class="w-8 h-8 rounded-full bg-gold-500 text-slate-950 flex items-center justify-center shrink-0 font-bold text-xs">
+                        AI
+                    </div>
+                    <div class="bg-emerald-950 border border-emerald-800 text-slate-200 p-3.5 rounded-2xl max-w-[85%] space-y-2">
+                        <p>Peace be unto you! I am the <strong>Dr. Awal Herbal AI Assistant</strong>.</p>
+                        <p>How can I assist you today? You can ask me about our <strong>36 specialized treatment conditions</strong>, check your symptoms, get clinic directions, or schedule a consultation.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="aiTyping" class="hidden px-4 py-2 text-xs text-gold-400 italic flex items-center gap-2">
+                <i class="fa-solid fa-circle-notch animate-spin"></i> Dr. Awal AI Assistant is typing...
+            </div>
+
+            <div class="p-3 sm:p-4 bg-slate-950 border-t border-slate-800 flex items-center gap-2">
+                <input type="text" id="aiInput" placeholder="Type your symptom or ask a question..." 
+                       onkeypress="if(event.key==='Enter') sendAiMessage()"
+                       class="flex-1 bg-slate-900 border border-emerald-800 text-slate-100 text-sm rounded-xl px-4 py-3 focus:outline-none focus:border-gold-400">
+                <button onclick="sendAiMessage()" class="bg-gold-500 hover:bg-gold-400 text-slate-950 px-4 py-3 rounded-xl font-bold text-sm transition-colors flex items-center gap-1">
+                    <span>Send</span> <i class="fa-solid fa-paper-plane text-xs"></i>
+                </button>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Booking Modal -->
+    <div id="bookingModal" class="fixed inset-0 bg-slate-950/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-slate-900 border border-gold-500/40 rounded-3xl max-w-lg w-full p-6 sm:p-8 relative shadow-2xl space-y-6">
+            <button onclick="closeBookingModal()" class="absolute top-5 right-5 text-slate-400 hover:text-slate-100">
+                <i class="fa-solid fa-xmark text-xl"></i>
+            </button>
+
+            <div class="space-y-1">
+                <div class="flex items-center gap-2 text-gold-400 text-xs font-semibold uppercase">
+                    <i class="fa-solid fa-calendar-check"></i> Direct Appointment
+                </div>
+                <h3 class="font-heading text-2xl font-bold text-slate-100">Book Patient Appointment</h3>
+                <p class="text-xs text-slate-400">Select your health topic and preferred consultation method.</p>
+            </div>
+
+            <form onsubmit="handleModalSubmit(event)" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-semibold text-slate-300 uppercase mb-1">Your Name</label>
+                    <input type="text" required placeholder="Full Name" class="w-full bg-slate-950 border border-slate-800 text-slate-100 text-sm rounded-xl p-3 focus:outline-none focus:border-gold-400">
+                </div>
+
+                <div>
+                    <label class="block text-xs font-semibold text-slate-300 uppercase mb-1">Phone Number</label>
+                    <input type="tel" required placeholder="0599057055" class="w-full bg-slate-950 border border-slate-800 text-slate-100 text-sm rounded-xl p-3 focus:outline-none focus:border-gold-400">
+                </div>
+
+                <div>
+                    <label class="block text-xs font-semibold text-slate-300 uppercase mb-1">Selected Condition / Consultation</label>
+                    <input type="text" id="modalConditionInput" readonly class="w-full bg-emerald-950 text-gold-300 border border-emerald-800 text-sm font-semibold rounded-xl p-3">
+                </div>
+
+                <div>
+                    <label class="block text-xs font-semibold text-slate-300 uppercase mb-1">Preferred Consultation Type</label>
+                    <div class="grid grid-cols-2 gap-3">
+                        <label class="flex items-center gap-2 p-3 rounded-xl bg-slate-950 border border-slate-800 cursor-pointer hover:border-gold-500/40">
+                            <input type="radio" name="consultType" value="In-Person Clinic Visit" checked class="text-gold-500">
+                            <span class="text-xs font-medium text-slate-200">In-Person Visit</span>
+                        </label>
+                        <label class="flex items-center gap-2 p-3 rounded-xl bg-slate-950 border border-slate-800 cursor-pointer hover:border-gold-500/40">
+                            <input type="radio" name="consultType" value="Phone / WhatsApp Consultation" class="text-gold-500">
+                            <span class="text-xs font-medium text-slate-200">Phone / WhatsApp</span>
+                        </label>
+                    </div>
+                </div>
+
+                <button type="submit" class="w-full bg-gradient-to-r from-gold-500 to-gold-600 text-slate-950 font-bold py-3.5 rounded-xl hover:from-gold-400 hover:to-gold-500 shadow-md transition-all">
+                    Confirm Appointment Request
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Notification Alert Message Box -->
+    <div id="alertBox" class="fixed top-5 right-5 z-50 hidden max-w-sm bg-emerald-900 border-l-4 border-gold-400 text-slate-100 p-4 rounded-xl shadow-2xl transition-all">
+        <div class="flex items-center gap-3">
+            <i class="fa-solid fa-circle-check text-gold-400 text-xl"></i>
+            <div>
+                <h4 class="font-bold text-sm" id="alertTitle">Request Sent!</h4>
+                <p class="text-xs text-slate-300 mt-0.5" id="alertMsg">We will contact you shortly.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript Data & Logic -->
+    <script>
+        const yearEl = document.getElementById('year');
+        if (yearEl) {
+            yearEl.textContent = new Date().getFullYear();
+        }
+
+        const ailments = [
+            { id: 1, name: "Hypertension / High Blood Pressure", category: "cardio", code: "01", icon: "fa-heart-pulse" },
+            { id: 2, name: "Type 2 Diabetes Mellitus", category: "metabolic", code: "02", icon: "fa-cubes-stacked" },
+            { id: 3, name: "Stroke", category: "neurological", code: "03", icon: "fa-brain" },
+            { id: 4, name: "Ischemic Heart Disease", category: "cardio", code: "04", icon: "fa-heart-crack" },
+            { id: 5, name: "Chronic Kidney Disease", category: "renal", code: "05", icon: "fa-disease" },
+            { id: 6, name: "Asthma", category: "respiratory", code: "06", icon: "fa-lungs" },
+            { id: 7, name: "Chronic Obstructive Pulmonary Disease (COPD)", category: "respiratory", code: "07", icon: "fa-wind" },
+            { id: 8, name: "Sickle Cell Disease", category: "cardio", code: "08", icon: "fa-vial" },
+            { id: 9, name: "Arthritis / Osteoarthritis", category: "neurological", code: "09", icon: "fa-bone" },
+            { id: 10, name: "Peptic Ulcer Disease", category: "digestive", code: "10", icon: "fa-stomach" },
+            { id: 11, name: "Liver Cirrhosis", category: "digestive", code: "11", icon: "fa-capsules" },
+            { id: 12, name: "Epilepsy / Seizure Disorder", category: "neurological", code: "12", icon: "fa-bolt" },
+            { id: 13, name: "Glaucoma", category: "infectious", code: "13", icon: "fa-eye" },
+            { id: 14, name: "Cancers", category: "infectious", code: "14", icon: "fa-shield-virus" },
+            { id: 15, name: "Mental Health Disorders", category: "neurological", code: "15", icon: "fa-head-side-virus" },
+            { id: 16, name: "HIV / AIDS", category: "infectious", code: "16", icon: "fa-ribbon" },
+            { id: 17, name: "Hepatitis B", category: "infectious", code: "17", icon: "fa-virus-covid" },
+            { id: 18, name: "Tuberculosis", category: "respiratory", code: "18", icon: "fa-lungs-virus" },
+            { id: 19, name: "Chronic Schistosomiasis / Bilharzia", category: "infectious", code: "19", icon: "fa-bacterium" },
+            { id: 20, name: "Lymphatic Filariasis / Elephantiasis", category: "infectious", code: "20", icon: "fa-notes-medical" },
+            { id: 21, name: "Chronic Heart Failure", category: "cardio", code: "21", icon: "fa-heart-circle-xmark" },
+            { id: 22, name: "Rheumatic Heart Disease", category: "cardio", code: "22", icon: "fa-heart-circle-bolt" },
+            { id: 23, name: "Gout", category: "metabolic", code: "23", icon: "fa-shoe-prints" },
+            { id: 24, name: "Systemic Lupus Erythematosus (SLE)", category: "infectious", code: "24", icon: "fa-dna" },
+            { id: 25, name: "Chronic Sinusitis", category: "respiratory", code: "25", icon: "fa-head-side-cough" },
+            { id: 26, name: "Chronic Otitis Media", category: "respiratory", code: "26", icon: "fa-ear-listen" },
+            { id: 27, name: "Chronic Gastritis", category: "digestive", code: "27", icon: "fa-fire-flame-curved" },
+            { id: 28, name: "Irritable Bowel Syndrome (IBS)", category: "digestive", code: "28", icon: "fa-arrows-rotate" },
+            { id: 29, name: "Chronic Pancreatitis", category: "digestive", code: "29", icon: "fa-capsules" },
+            { id: 30, name: "Thyroid Disorders (Hypo/Hyperthyroidism)", category: "metabolic", code: "30", icon: "fa-weight-scale" },
+            { id: 31, name: "Obesity", category: "metabolic", code: "31", icon: "fa-person-walking" },
+            { id: 32, name: "Osteoporosis", category: "neurological", code: "32", icon: "fa-child" },
+            { id: 33, name: "Chronic Migraine", category: "neurological", code: "33", icon: "fa-face-grimace" },
+            { id: 34, name: "Parkinson's Disease", category: "neurological", code: "34", icon: "fa-hand-dots" },
+            { id: 35, name: "Chronic Lower Back Pain", category: "neurological", code: "35", icon: "fa-person-dots-from-line" },
+            { id: 36, name: "And all forms of spiritual issues", category: "infectious", code: "36", icon: "fa-star-of-life" }
+        ];
+
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        if (mobileMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+
+        const grid = document.getElementById('ailmentsGrid');
+        const searchInput = document.getElementById('ailmentSearch');
+        const clearBtn = document.getElementById('clearSearch');
+        const searchCount = document.getElementById('searchCount');
+        const noResults = document.getElementById('noResults');
+        let currentCategory = 'all';
+
+        function renderAilments() {
+            if (!grid) return;
+            grid.innerHTML = '';
+            const query = searchInput ? searchInput.value.toLowerCase().trim() : '';
+            
+            let filtered = ailments.filter(item => {
+                const matchesCat = currentCategory === 'all' || item.category === currentCategory;
+                const matchesSearch = item.name.toLowerCase().includes(query) || item.code.includes(query);
+                return matchesCat && matchesSearch;
+            });
+
+            if (filtered.length === 0) {
+                if (noResults) noResults.classList.remove('hidden');
+                grid.classList.add('hidden');
+                if (searchCount) searchCount.classList.add('hidden');
+            } else {
+                if (noResults) noResults.classList.add('hidden');
+                grid.classList.remove('hidden');
+
+                if (query.length > 0 && searchCount) {
+                    searchCount.classList.remove('hidden');
+                    searchCount.textContent = `Showing ${filtered.length} matching conditions`;
+                } else if (searchCount) {
+                    searchCount.classList.add('hidden');
+                }
+
+                filtered.forEach(item => {
+                    const card = document.createElement('div');
+                    card.className = "bg-slate-900/90 border border-slate-800 rounded-2xl p-5 hover:border-gold-500/50 transition-all hover:shadow-xl group flex flex-col justify-between";
+                    card.innerHTML = `
+                        <div class="space-y-3">
+                            <div class="flex items-center justify-between">
+                                <span class="w-8 h-8 rounded-full bg-emerald-950 border border-gold-500/30 text-gold-400 flex items-center justify-center font-bold text-xs">
+                                    ${item.code}
+                                </span>
+                                <i class="fa-solid ${item.icon} text-slate-500 group-hover:text-gold-400 transition-colors text-lg"></i>
+                            </div>
+                            <h4 class="font-bold text-slate-200 text-sm sm:text-base leading-snug group-hover:text-gold-300 transition-colors">
+                                ${item.name}
+                            </h4>
+                        </div>
+                        <div class="pt-4 mt-4 border-t border-slate-800/80 flex items-center justify-between text-xs">
+                            <span class="text-slate-400 font-medium">Specialized Herbal Care</span>
+                            <button onclick="openBookingModal('${item.name}')" class="text-gold-400 hover:text-gold-300 font-semibold flex items-center gap-1">
+                                Consultation <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                            </button>
+                        </div>
+                    `;
+                    grid.appendChild(card);
+                });
+            }
+        }
+
+        const tabs = document.querySelectorAll('.category-tab');
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                tabs.forEach(t => {
+                    t.classList.remove('bg-gold-500', 'text-slate-950');
+                    t.classList.add('bg-emerald-950', 'text-slate-300', 'border', 'border-emerald-800');
+                });
+                tab.classList.remove('bg-emerald-950', 'text-slate-300', 'border', 'border-emerald-800');
+                tab.classList.add('bg-gold-500', 'text-slate-950');
+
+                currentCategory = tab.dataset.category;
+                renderAilments();
+            });
+        });
+
+        if (searchInput) {
+            searchInput.addEventListener('input', (e) => {
+                if (clearBtn) {
+                    if (e.target.value.length > 0) {
+                        clearBtn.classList.remove('hidden');
+                    } else {
+                        clearBtn.classList.add('hidden');
+                    }
+                }
+                renderAilments();
+            });
+        }
+
+        if (clearBtn) {
+            clearBtn.addEventListener('click', () => {
+                if (searchInput) searchInput.value = '';
+                clearBtn.classList.add('hidden');
+                renderAilments();
+            });
+        }
+
+        const modal = document.getElementById('bookingModal');
+        const modalConditionInput = document.getElementById('modalConditionInput');
+
+        function openBookingModal(condition = "General Herbal Consultation") {
+            if (modalConditionInput) modalConditionInput.value = condition;
+            if (modal) modal.classList.remove('hidden');
+        }
+
+        function closeBookingModal() {
+            if (modal) modal.classList.add('hidden');
+        }
+
+        function showAlert(title, message) {
+            const alertBox = document.getElementById('alertBox');
+            const alertTitle = document.getElementById('alertTitle');
+            const alertMsg = document.getElementById('alertMsg');
+            if (alertBox && alertTitle && alertMsg) {
+                alertTitle.textContent = title;
+                alertMsg.textContent = message;
+                alertBox.classList.remove('hidden');
+                setTimeout(() => {
+                    alertBox.classList.add('hidden');
+                }, 4000);
+            }
+        }
+
+        function handleModalSubmit(e) {
+            e.preventDefault();
+            closeBookingModal();
+            showAlert("Appointment Booked!", "Your appointment request has been received. Our clinical receptionist will call you back.");
+        }
+
+        function shareOnSocial(platform) {
+            if (platform === 'copy') {
+                copyClinicLink();
+                return;
+            }
+            const pageUrl = encodeURIComponent(window.location.href);
+            const title = encodeURIComponent("Dr Awal Oboafo Herbal Clinic - Natural Healing, Better Living");
+            let url = "";
+
+            switch(platform) {
+                case 'whatsapp':
+                    url = `https://api.whatsapp.com/send?text=${title}%20${pageUrl}`;
+                    break;
+                case 'facebook':
+                    url = `https://www.facebook.com/sharer/sharer.php?u=${pageUrl}`;
+                    break;
+                case 'twitter':
+                    url = `https://twitter.com/intent/tweet?url=${pageUrl}&text=${title}`;
+                    break;
+                case 'telegram':
+                    url = `https://t.me/share/url?url=${pageUrl}&text=${title}`;
+                    break;
+            }
+
+            if (url) {
+                window.open(url, '_blank', 'width=600,height=400');
+            }
+        }
+
+        function copyClinicLink() {
+            const dummy = document.createElement('input');
+            document.body.appendChild(dummy);
+            dummy.value = window.location.href;
+            dummy.select();
+            document.execCommand('copy');
+            document.body.removeChild(dummy);
+            showAlert("Link Copied!", "Clinic website URL copied to clipboard.");
+        }
+
+        const aiModal = document.getElementById('aiChatModal');
+        const aiChatHistory = document.getElementById('aiChatHistory');
+        const aiInput = document.getElementById('aiInput');
+        const aiTyping = document.getElementById('aiTyping');
+
+        function openAiChatModal() {
+            if (aiModal) aiModal.classList.remove('hidden');
+        }
+
+        function closeAiChatModal() {
+            if (aiModal) aiModal.classList.add('hidden');
+        }
+
+        function sendQuickPrompt(promptText) {
+            if (aiInput) {
+                aiInput.value = promptText;
+                sendAiMessage();
+            }
+        }
+
+        function toggleMobileMenu() {
+            if (mobileMenu) mobileMenu.classList.add('hidden');
+        }
+
+        function appendUserMessage(msg) {
+            if (!aiChatHistory) return;
+            const div = document.createElement('div');
+            div.className = "flex items-start justify-end gap-3";
+            div.innerHTML = `
+                <div class="bg-gold-500 text-slate-950 font-medium p-3.5 rounded-2xl max-w-[85%]">
+                    ${msg}
+                </div>
+            `;
+            aiChatHistory.appendChild(div);
+            aiChatHistory.scrollTop = aiChatHistory.scrollHeight;
+        }
+
+        function appendAiMessage(msgHtml) {
+            if (!aiChatHistory) return;
+            const div = document.createElement('div');
+            div.className = "flex items-start gap-3";
+            div.innerHTML = `
+                <div class="w-8 h-8 rounded-full bg-gold-500 text-slate-950 flex items-center justify-center shrink-0 font-bold text-xs">
+                    AI
+                </div>
+                <div class="bg-emerald-950 border border-emerald-800 text-slate-200 p-3.5 rounded-2xl max-w-[85%] space-y-2">
+                    ${msgHtml}
+                </div>
+            `;
+            aiChatHistory.appendChild(div);
+            aiChatHistory.scrollTop = aiChatHistory.scrollHeight;
+        }
+
+        function sendAiMessage() {
+            if (!aiInput) return;
+            const text = aiInput.value.trim();
+            if (!text) return;
+
+            appendUserMessage(text);
+            aiInput.value = '';
+
+            if (aiTyping) aiTyping.classList.remove('hidden');
+
+            setTimeout(() => {
+                if (aiTyping) aiTyping.classList.add('hidden');
+                generateAiResponse(text);
+            }, 800);
+        }
+
+        function generateAiResponse(userText) {
+            const lower = userText.toLowerCase();
+            const matchedAilments = ailments.filter(a => lower.includes(a.name.toLowerCase()) || lower.includes(a.category));
+
+            if (lower.includes('hours') || lower.includes('open') || lower.includes('location') || lower.includes('where')) {
+                appendAiMessage(`
+                    <p><strong>Clinic Location & Hours:</strong></p>
+                    <p>📍 <strong>Address:</strong> Amansaman Onyassana - Accra Price Junction, Accra, Ghana.</p>
+                    <p>📞 <strong>Phone:</strong> <a href="tel:0599057055" class="text-gold-400 font-bold underline">0599057055</a></p>
+                    <p>✉️ <strong>Email:</strong> drawaloboafoclinic@gmail.com</p>
+                    <p>🕒 <strong>Consultation Hours:</strong> Monday – Saturday (8:00 AM – 6:00 PM).</p>
+                `);
+            } 
+            else if (lower.includes('book') || lower.includes('appointment') || lower.includes('visit') || lower.includes('cost')) {
+                appendAiMessage(`
+                    <p>You can schedule your herbal consultation immediately!</p>
+                    <button onclick="closeAiChatModal(); openBookingModal('AI Assisted Consultation');" class="bg-gold-500 text-slate-950 font-bold px-3 py-1.5 rounded-lg text-xs mt-2">
+                        <i class="fa-solid fa-calendar-check"></i> Open Booking Form Now
+                    </button>
+                    <p class="text-[11px] text-slate-400 mt-1">Or call direct: <strong>0599057055</strong></p>
+                `);
+            }
+            else if (matchedAilments.length > 0) {
+                let listHtml = matchedAilments.slice(0, 4).map(a => `<li class="text-gold-300 font-semibold">• ${a.name}</li>`).join('');
+                appendAiMessage(`
+                    <p><strong>Automated Symptom Match Result:</strong></p>
+                    <p>Dr. Awal Oboafo Herbal Clinic specializes in treating your specified condition(s):</p>
+                    <ul class="space-y-1 my-2">${listHtml}</ul>
+                    <p>Our botanical formulations work holistically to address the root causes of these conditions.</p>
+                    <button onclick="closeAiChatModal(); openBookingModal('${matchedAilments[0].name}');" class="bg-emerald-600 text-white font-bold px-3 py-1.5 rounded-lg text-xs mt-2">
+                        Book Consultation for ${matchedAilments[0].name}
+                    </button>
+                `);
+            }
+            else if (lower.includes('ulcer') || lower.includes('stomach') || lower.includes('gastritis')) {
+                appendAiMessage(`
+                    <p><strong>Stomach & Gastric Relief Advice:</strong></p>
+                    <p>We treat <em>Peptic Ulcer Disease (10)</em> and <em>Chronic Gastritis (27)</em> with natural root extracts designed to soothe mucosal linings and balance digestive acid.</p>
+                    <p>Would you like to speak directly with Dr. Awal Oboafo?</p>
+                    <a href="https://wa.me/233599057055?text=Hello%20Doctor,%20I%20have%20stomach/ulcer%20issues" target="_blank" class="inline-block bg-emerald-600 text-white font-bold px-3 py-1.5 rounded-lg text-xs mt-1">
+                        Chat Doctor on WhatsApp
+                    </a>
+                `);
+            }
+            else if (lower.includes('spiritual') || lower.includes('evil') || lower.includes('protection')) {
+                appendAiMessage(`
+                    <p><strong>Spiritual Issues & Holistic Protection:</strong></p>
+                    <p>Yes, item #36 in our directory specifically covers <em>all forms of spiritual issues</em> through integrated holistic methods and guidance.</p>
+                    <p>Please request a private, confidential consultation.</p>
+                `);
+            }
+            else {
+                appendAiMessage(`
+                    <p>Thank you for reaching out. Based on your prompt, our holistic medical team can evaluate your health history and recommend an individualized natural treatment program.</p>
+                    <p>We treat 36 specialized conditions including Hypertension, Diabetes, Asthma, Kidney conditions, Ulcers, and Spiritual concerns.</p>
+                    <button onclick="closeAiChatModal(); openBookingModal('General Inquiry');" class="bg-gold-500 text-slate-950 font-bold px-3 py-1.5 rounded-lg text-xs mt-2">
+                        Request Custom Assessment
+                    </button>
+                `);
+            }
+        }
+
+        function handleLeadCapture(e) {
+            e.preventDefault();
+            const emailInput = document.getElementById('leadEmail');
+            const email = emailInput ? emailInput.value : 'patient';
+            const leadSuccess = document.getElementById('leadSuccess');
+            if (leadSuccess) leadSuccess.classList.remove('hidden');
+            showAlert("Voucher Sent!", `Herbal Care Guide & Voucher sent to ${email}`);
+            e.target.reset();
+        }
+
+        function handleReferralSubmit(e) {
+            e.preventDefault();
+            const friendInput = document.getElementById('refFriend');
+            const friend = friendInput ? friendInput.value : 'Loved One';
+            const referralSuccess = document.getElementById('referralSuccess');
+            const referralSuccessText = document.getElementById('referralSuccessText');
+            
+            if (referralSuccessText) {
+                referralSuccessText.innerHTML = `Automated clinic invitation & referral code <strong>REF-${Math.floor(1000+Math.random()*9000)}</strong> dispatched to <strong>${friend}</strong>.`;
+            }
+            if (referralSuccess) referralSuccess.classList.remove('hidden');
+            showAlert("Referral Sent!", `Invitation sent to ${friend}.`);
+            e.target.reset();
+        }
+
+        renderAilments();
+    </script>
+</body>
+</html>
